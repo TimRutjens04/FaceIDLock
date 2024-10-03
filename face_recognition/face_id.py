@@ -31,7 +31,4 @@ while True:
         if quitKey == ord('q'):
             break
 
-    video.release()
-    cv.destroyAllWindows()
-
         
