@@ -10,11 +10,9 @@ logging.basicConfig(
 )
 
 # Servo setup:
-SERVO_PIN = 11  # Change this to the appropriate pin number for your setup
+SERVO_PIN = 11  
 
-# Set pin numbering mode (BOARD or BCM)
-GPIO.setmode(GPIO.BOARD)  # Use physical pin numbering
-# Alternatively, you can use GPIO.setmode(GPIO.BCM) for Broadcom numbering
+GPIO.setmode(GPIO.BOARD)  
 
 GPIO.setup(SERVO_PIN, GPIO.OUT)
 p = GPIO.PWM(SERVO_PIN, 50)  # 50 Hz for standard servo motors
@@ -45,11 +43,3 @@ def cleanup_gpio():
     p.stop()
     GPIO.cleanup()
 
-# Example usage
-if __name__ == "__main__":
-    try:
-        unlock_door()
-        time.sleep(2)  # Keep the door unlocked for 2 seconds
-        lock_door()
-    finally:
-        cleanup_gpio()
