@@ -163,3 +163,4 @@ cython_debug/
 
 #Add this so git doesnt push since file size >100mb
 trainer.yml
+face_recognition/trainer.yml
